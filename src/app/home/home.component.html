@@ -1,0 +1,23 @@
+<h1 class="yellow">Welcome to Home Component</h1>
+<!-- String Interpolation -->
+<p>Hi!!!{{name}}... Welcome Back!!! {{count}}</p>
+<p>{{name}} is a {{getDetails()}}</p>
+<p>{{10+10}}</p>
+<p>Largest number:{{getLarge(100,1000)}}</p>
+<!-- Property Binding -->
+<h4 [innerText]="title"></h4>
+<button [disabled]="isDisabled">I am Disabled</button>
+<!-- Property Binding - Content Security -->
+<p [textContent]="injectText"></p>
+<img [src]="imgUrl" height="100px" width="100px">
+<img bind-src="imgUrl" height="100px" width="100px">
+<p [style.color]="color">Property Binding - Style Attribute</p>
+<!-- Event Binding -->
+<h5>Event Binding {{count}}</h5>
+<p>Single method invoked</p>
+<button (click)="click()">Click me!!!</button>
+<p>Count value : {{count}}</p>
+<p>Multiple methods invoked</p>
+<button (click)="click(); count1=count">Click me to access 2 properties!!!</button>
+<p>Count value : {{count}}</p>
+<p>Count 1 value : {{count1}}</p>
