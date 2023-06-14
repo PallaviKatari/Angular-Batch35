@@ -1,0 +1,6 @@
+<a (click)="hideList()">Trending Technologies....</a>
+<ul  *ngIf="isVisible">
+  <li *ngFor="let trends of Trending">
+    {{ trends }}
+  </li>
+</ul>

@@ -39,6 +39,33 @@ export class HomeComponent implements OnInit {
   click(){
     this.count++;
   }
+
+  //$event payload in Event binding
+  value=''
+  //Hello
+  getValue(event:any){
+    this.value=(event.target as HTMLInputElement).value;
+  }
+
+  //Template reference variable in Event binding
+  value1=''
+  getValue1(val:any){
+    this.value1=val.value;
+  }
+
+  // Key filtering
+  value2=''
+  value3=''
+  value4=''
+  value5=''
+
+  //Two-way binding
+  value6=''
+  clear(){
+    this.value6=''
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {

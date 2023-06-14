@@ -1,0 +1,118 @@
+<!-- Sidebar -->
+<!-- <p-sidebar [(visible)]="sidebarVisible1" position="left">
+
+    <h3>Left Sidebar</h3>
+</p-sidebar>
+
+<p-sidebar [(visible)]="sidebarVisible2" position="right">
+    <h3>Right Sidebar</h3>
+</p-sidebar>
+
+<p-sidebar [(visible)]="sidebarVisible3" position="top">
+    <h3>Top Sidebar</h3>
+</p-sidebar>
+
+<p-sidebar [(visible)]="sidebarVisible4" position="bottom">
+    <h3>Bottom Sidebar</h3>
+</p-sidebar>
+
+<p-button type="button" class="mr-2" (click)="sidebarVisible1 = true" icon="pi pi-arrow-right"></p-button>
+<p-button type="button" class="mr-2" (click)="sidebarVisible2 = true" icon="pi pi-arrow-left"></p-button>
+<p-button type="button" class="mr-2" (click)="sidebarVisible3 = true" icon="pi pi-arrow-down"></p-button>
+<p-button type="button" class="mr-2" (click)="sidebarVisible4 = true" icon="pi pi-arrow-up"></p-button>
+
+<p-accordion>
+    <p-accordionTab header="Salads"> Salads... </p-accordionTab>
+    <p-accordionTab header="Pasta"> Pasta... </p-accordionTab>
+    <p-accordionTab header="Pizza" [selected]="true">
+      <div>
+        <p-radioButton
+          label="Double cheese"
+          name="pizza"
+          value="double-cheese"
+          [(ngModel)]="pizzaSelection"
+        >
+        </p-radioButton>
+      </div>
+  
+      <div>
+        <p-radioButton
+          label="Anchovy"
+          name="pizza"
+          value="anchovy"
+          [(ngModel)]="pizzaSelection"
+        >
+        </p-radioButton>
+      </div>
+  
+      <div>
+        <p-radioButton
+          label="Meatlover's"
+          name="pizza"
+          value="meat-lover"
+          [(ngModel)]="pizzaSelection"
+        >
+        </p-radioButton>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
+  
+  <p-panel header="Extras" *ngIf="pizzaSelection && pizzaSelection.length">
+    Would you like extra cheese on your pizza?
+    <button pButton type="button" label="Ok, yeah!"></button>
+  </p-panel>
+   -->
+Change the theme color :
+<input
+  [(ngModel)]="mycolor"
+  type="text"
+  style="border-radius: 10px; margin-top: 30px; text-align: center"
+/>
+<p [ngStyle]="{ color: mycolor }">You have chosen: {{ mycolor }}</p>
+<div *ngFor="let item of course" style="margin-top: auto">
+  <div class="row">
+    <!-- <div class="col-lg-3">
+            <img [src]="item.img">
+        </div> -->
+    <div class="card col-lg-12" style="margin-top: 50px">
+      <div class="card-body col-lg-12">
+        <div
+          class="row"
+          style="border: solid; border-color: rgb(8, 8, 8); margin-top: 50px"
+        >
+          <div class="col-lg-3">
+            <!-- PROPERTY BINDING -->
+            <img [src]="item.img" />
+          </div>
+          <div class="col-lg-9" style="margin-top: 30px">
+            <div class="data" [ngStyle]="{ color: mycolor }">
+              {{ item.name | uppercase }}
+              <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
+              <!--Event Binding-->
+              <span
+                [ngClass]="getClass()"
+                (click)="showUserDetailsToggle()"
+              ></span>
+            </div>
+            <hr />
+            <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
+            <!--Property Binding-->
+            <!--courseDetail is false-->
+            <div
+              class="data"
+              [hidden]="courseDetail"
+              [ngStyle]="{ color: mycolor }"
+            >
+              <p>{{ item.description | uppercase }}</p>
+              <br />
+              <p>Course Fee: {{ item.fees | currency : "INR" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-lg-3">
+            <img [src]="item.img">
+        </div> -->
+  </div>
+</div>

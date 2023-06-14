@@ -1,4 +1,4 @@
-<h1 class="yellow">Welcome to Home Component</h1>
+<h1 class="yellow">Welcome to Home Component - DATA BINDING</h1>
 <!-- String Interpolation -->
 <p>Hi!!!{{name}}... Welcome Back!!! {{count}}</p>
 <p>{{name}} is a {{getDetails()}}</p>
@@ -21,3 +21,23 @@
 <button (click)="click(); count1=count">Click me to access 2 properties!!!</button>
 <p>Count value : {{count}}</p>
 <p>Count 1 value : {{count1}}</p>
+<!-- $event payload -->
+<input (input)="getValue($event)">
+<p>Event Payload:{{value}}</p>
+<!-- Template reference variable -->
+<input #val (input)="getValue1(val)">
+<p>Template Reference:{{value1}}</p>
+<!-- Key event filtering -->
+<input (keyup)="value2=$any($event.target).value"/>
+<p>Keyup:{{value2}}</p>
+<input (keyup.enter)="value3=$any($event.target).value"/>
+<p>Keyup with enter:{{value3}}</p>
+<input (keyup.control.shift.enter)="value4=$any($event.target).value"/>
+<p>Keyup with control.shift.enter:{{value4}}</p>
+<input (keyup.enter)="value5=$any($event.target).value"
+       (keyup.escape)="$any($event.target).value;value5=''"/>
+<p>Keyup with enter and escape:{{value5}}</p>
+<!-- Two-way Binding -->
+<input type="text" name="value" [(ngModel)]="value6">
+<p>Two-way Binding:{{value6}}</p>
+<button (click)="clear()">Clear Value6</button>
