@@ -65,10 +65,49 @@ export class HomeComponent implements OnInit {
     this.value6=''
   }
 
+  //Structural - *ngFor
+
+  trainees:Trainee[]=[
+    {
+      traineeId:1,
+      traineeName:'Arun'
+    },
+    {
+      traineeId:2,
+      traineeName:'Srikanth'
+    },
+    {
+      traineeId:3,
+      traineeName:'Sharon'
+    },
+    {
+      traineeId:4,
+      traineeName:'Hemanth'
+    },
+    {
+      traineeId:5,
+      traineeName:'Vignesh'
+    },
+    {
+      traineeId:6,
+      traineeName:'Sivabharath'
+    },
+
+  ]
+
+  //ngSwitch - *ngSwitchCase , *ngSwitchDefault
+  num:number=0;
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+}
+
+//Class -Properties - *ngFor
+class Trainee{
+  traineeId:number | undefined;
+  traineeName:string | undefined;
 }

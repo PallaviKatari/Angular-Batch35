@@ -11,6 +11,7 @@ export class InfoComponent implements OnInit {
   ngOnInit(): void {}
   Trending = ['Angular 16', 'React 18', 'Vue 3', '.NET 7.0'];
 
+  //*ngIf
   isVisible: boolean = true;
 
   hideList(){

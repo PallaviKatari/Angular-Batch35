@@ -41,3 +41,29 @@
 <input type="text" name="value" [(ngModel)]="value6">
 <p>Two-way Binding:{{value6}}</p>
 <button (click)="clear()">Clear Value6</button>
+<!-- *ngFor -->
+<h3>Trainees Details*ngFor Example</h3>
+<ul>
+       <li *ngFor="let trainee of trainees">
+             Trainee ID: {{trainee.traineeId}}<br>
+             Trainee Name: {{trainee.traineeName}}
+       </li>
+</ul>
+<!-- ngSwitch - *ngSwitchCase , *ngSwitchDefault -->
+<div class="card">
+       <div class="card-header">
+              ngSwitch Example
+       </div>
+       <div class="card-body">
+              Enter Number:<input type="text" [(ngModel)]="num">
+              <div [ngSwitch]="num">
+                     <div *ngSwitchCase="1">Arun</div>
+                     <div *ngSwitchCase="2">Sharon</div>
+                     <div *ngSwitchCase="3">Hemanth</div>
+                     <div *ngSwitchCase="4">Srikanth</div>
+                     <div *ngSwitchCase="5">Vignesh</div>
+                     <div *ngSwitchCase="6">Sivabharath</div>
+                     <div *ngSwitchDefault>No Trainee</div>
+              </div>
+       </div>
+</div>

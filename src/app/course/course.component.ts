@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//importing courses.json
 import * as data from 'src/assets/data/courses.json'
 @Component({
   selector: 'app-course',
@@ -19,7 +20,7 @@ export class CourseComponent implements OnInit {
   }
   course: any = (data as any).default;
   //Toggle effect to show and hide the customer details
-  courseDetail = false;
+  courseDetail = true;
   //Event for Show and Hide
   showUserDetailsToggle() {
     this.courseDetail = !this.courseDetail;//!false
@@ -36,6 +37,6 @@ export class CourseComponent implements OnInit {
     return classList;
   }
   //property mycolor
-  mycolor:any|undefined="aqua";
+  mycolor:any|undefined="red";
 
 }

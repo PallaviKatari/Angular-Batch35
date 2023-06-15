@@ -15,7 +15,7 @@ export class CareerComponent implements OnInit {
     {
       CourseName: 'Dotnet',
       CourseDescription: 'Dotnet Full Stack - .NET MVC,.NET CORE,SQL SERVER',
-      Status: 'InActive',
+      Status: 'Active',
       img: 'https://th.bing.com/th/id/OIP._w4kEUAb7-YMEOc46aFcWQHaHD?w=171&h=180&c=7&r=0&o=5&dpr=1.56&pid=1.7',
     },
     {
@@ -39,7 +39,7 @@ export class CareerComponent implements OnInit {
     {
       CourseName: 'Testing',
       CourseDescription: 'Dotnet Full Stack - .NET MVC,.NET CORE,SQL SERVER',
-      Status: 'Active',
+      Status: 'InActive',
       img: 'https://dash.ps/wp-content/uploads/2020/08/php-framework-laravel-768x341.jpg',
     },
   ];
