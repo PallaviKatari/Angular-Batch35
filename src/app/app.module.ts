@@ -19,6 +19,8 @@ import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radioButton';
 import { SidebarModule } from 'primeng/sidebar';
 import { InfoComponent } from './info/info.component';
+import { TutoriallistComponent } from './tutoriallist/tutoriallist.component';
+import { TutorialtableComponent } from './tutorialtable/tutorialtable.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { InfoComponent } from './info/info.component';
     CourseComponent,
     NavComponent,
     InfoComponent,
+    TutoriallistComponent,
+    TutorialtableComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { InfoComponent } from './info/info.component';
     ButtonModule,
     RadioButtonModule,
     BrowserAnimationsModule,
-    SidebarModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

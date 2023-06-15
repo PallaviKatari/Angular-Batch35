@@ -1,0 +1,24 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-tutorialtable',
+  templateUrl: './tutorialtable.component.html',
+  styleUrls: ['./tutorialtable.component.css']
+})
+export class TutorialtableComponent implements OnInit {
+
+  @Input()
+  tutorialList: Array<string> = [];
+
+  @Output()
+  tutorialSelectedEventEmitter =  new EventEmitter();
+
+  tutorialSelected(selectedTutorial: string) {
+    this.tutorialSelectedEventEmitter.emit(selectedTutorial);
+   }
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
