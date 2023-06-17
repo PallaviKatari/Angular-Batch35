@@ -21,6 +21,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { InfoComponent } from './info/info.component';
 import { TutoriallistComponent } from './tutoriallist/tutoriallist.component';
 import { TutorialtableComponent } from './tutorialtable/tutorialtable.component';
+import { CustompipePipe } from './custompipe.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TutorialtableComponent } from './tutorialtable/tutorialtable.component'
     InfoComponent,
     TutoriallistComponent,
     TutorialtableComponent,
+    CustompipePipe,
   ],
   imports: [
     BrowserModule,

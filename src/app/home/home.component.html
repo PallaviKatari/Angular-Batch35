@@ -67,3 +67,27 @@
               </div>
        </div>
 </div>
+<!-- Pipes -->
+DATE PIPES <br/>
+DEFAULT: {{toDate}}
+<br/>
+{{toDate | date:'dd-MMMM-yyyy HH:MM:SS'}}
+<br/>
+STRING PIPES<br/>
+{{stringPipe | uppercase}}<br/>
+{{stringPipe | lowercase}}<br/>
+{{stringPipe | slice:0:6 | uppercase}}<br/>
+{{stringPipe | slice:-4 | lowercase}}
+CURRENCY PIPES<br/>
+{{price}}<br/>
+{{price|currency}}
+{{price|currency:'INR'}}
+PERCENT PIPES<br/>
+{{percentage}}
+{{percentage|percent}}
+DECIMAL PIPES<br/>
+{{average}}
+{{average|number:'2.1-4'}}
+CUSTOM PIPE<br/>
+{{numberCustom}}<br/>
+{{numberCustom|custompipe}}

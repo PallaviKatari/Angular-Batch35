@@ -13,8 +13,9 @@ export class TutorialtableComponent implements OnInit {
   @Output()
   tutorialSelectedEventEmitter =  new EventEmitter();
 
+  //Angular
   tutorialSelected(selectedTutorial: string) {
-    this.tutorialSelectedEventEmitter.emit(selectedTutorial);
+    this.tutorialSelectedEventEmitter.emit(selectedTutorial);//Angular
    }
   constructor() { }
 

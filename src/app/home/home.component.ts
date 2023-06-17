@@ -98,7 +98,14 @@ export class HomeComponent implements OnInit {
   //ngSwitch - *ngSwitchCase , *ngSwitchDefault
   num:number=0;
 
+  //Pipes
 
+  toDate:Date=new Date();
+  stringPipe='sTRING pIPE'
+  price=5000
+  percentage:number=0.1234;
+  average:number=85.425637;
+  numberCustom=10
   constructor() { }
 
   ngOnInit(): void {

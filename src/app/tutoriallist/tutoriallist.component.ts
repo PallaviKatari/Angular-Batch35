@@ -12,9 +12,10 @@ export class TutoriallistComponent implements OnInit {
     ".NET",
   ];
 
+  //Angular,React
   selectedTutorialToWatch(data: string) {
     debugger;
-    Swal.fire(data);
+    Swal.fire(data); // Angular,React
   }
   constructor() {}
 
