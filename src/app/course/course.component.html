@@ -108,7 +108,14 @@ Change the theme color :
               <p>Course Fee: {{ item.fees | currency : "INR" }}</p>
               <!-- CUSTOM VALIDATOR -->
               <!-- Button trigger modal -->
-              <button class="btn btn-primary" style="margin-bottom: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
+              <button
+                class="btn btn-primary"
+                style="margin-bottom: 10px"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
@@ -123,19 +130,79 @@ Change the theme color :
 <!-- SUBSCRIBE MODAL -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-        ...
+        <form [formGroup]="myForm" novalidate>
+          <div class="form-group">
+            <label> Username: </label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              placeholder="Your username"
+              [ngClass]="{
+                'is-invalid':
+                  username.errors && (username.touched || username.dirty),
+                'is-valid': username.valid
+              }"
+            />
+
+            <!--using visual feedback-->
+            <div class="invalid-feedback">
+              <!--*ngIf Directive-->
+              <strong *ngIf="username.errors?.required"
+                >Username is required</strong
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label> Website URL:</label>
+            <input
+              type="url"
+              class="form-control"
+              formControlName="mail"
+              placeholder="Your mail ID"
+              [ngClass]="{
+                'is-invalid':
+                  mail.errors && (mail.touched || mail.dirty),
+                'is-valid': mail.valid
+              }"
+            />
+
+            <!--using visual feedback-->
+            <div class="invalid-feedback">
+              <!--*ngIf Directive-->
+              <strong *ngIf="mail.errors?.required">
+                Mail ID is required</strong
+              >
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit(myForm)">
+          Subscribe
+        </button>
       </div>
     </div>
   </div>
