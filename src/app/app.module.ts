@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //ngModel
 import { FormsModule } from '@angular/forms';
-
+//Reactive Forms
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,10 @@ import { InfoComponent } from './info/info.component';
 import { TutoriallistComponent } from './tutoriallist/tutoriallist.component';
 import { TutorialtableComponent } from './tutorialtable/tutorialtable.component';
 import { CustompipePipe } from './custompipe.pipe';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+import { PhoneNumberValidatorDirective } from './phone-number-validator.directive';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +39,9 @@ import { CustompipePipe } from './custompipe.pipe';
     TutoriallistComponent,
     TutorialtableComponent,
     CustompipePipe,
+    SignupComponent,
+    SigninComponent,
+    PhoneNumberValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,8 @@ import { CustompipePipe } from './custompipe.pipe';
     ButtonModule,
     RadioButtonModule,
     BrowserAnimationsModule,
-    SidebarModule
+    SidebarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

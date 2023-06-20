@@ -28,19 +28,19 @@ export class CareerComponent implements OnInit {
       CourseName: 'Python',
       CourseDescription: 'Dotnet Full Stack - .NET MVC,.NET CORE,SQL SERVER',
       Status: 'Active',
-      img: 'https://dash.ps/wp-content/uploads/2020/08/php-framework-laravel-768x341.jpg',
+      img: 'https://tse1.mm.bing.net/th/id/OIP.CbL7Xeq2c29sTx9d-HTbXAHaHa?pid=ImgDet&rs=1',
     },
     {
       CourseName: 'PHP',
       CourseDescription: 'Dotnet Full Stack - .NET MVC,.NET CORE,SQL SERVER',
       Status: 'InActive',
-      img: 'https://dash.ps/wp-content/uploads/2020/08/php-framework-laravel-768x341.jpg',
+      img: 'https://th.bing.com/th/id/R.204799a51cef12c61b314273bce403e4?rik=xuSjfbue9in07g&riu=http%3a%2f%2fassets.prestashop2.com%2fsites%2fdefault%2ffiles%2fstyles%2fblog_750x320%2fpublic%2fblog%2fen%2ffiles%2f2013%2f06%2fphp-logo_23.jpeg%3fitok%3dK4UTCWej&ehk=dqVEaASf95TviAGsfGALP4W6kUsc0VyjgRMiGrpiv%2bk%3d&risl=&pid=ImgRaw&r=0',
     },
     {
       CourseName: 'Testing',
       CourseDescription: 'Dotnet Full Stack - .NET MVC,.NET CORE,SQL SERVER',
       Status: 'InActive',
-      img: 'https://dash.ps/wp-content/uploads/2020/08/php-framework-laravel-768x341.jpg',
+      img: 'https://tse3.mm.bing.net/th/id/OIP.w-OJMa7KWZ-Rm14KDClBsAHaEc?pid=ImgDet&rs=1',
     },
   ];
 }

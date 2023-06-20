@@ -1,13 +1,16 @@
 <div class="container">
-  <table class="table table-bordered table-light" style="color: rgb(15, 15, 15)">
+  <h1>Component Communication</h1>
+  <p>@Input(),@Output(),EventEmitter,emit()</p>
+  <br/>
+  <table class="table table-dark" style="color: rgb(15, 15, 15)">
     <tr>
       <th>Tutorial Name</th>
-      <th></th>
+      <th>Action</th>
     </tr>
     <tr *ngFor="let tut of tutorialList">
       <td>{{ tut }}</td>
       <td>
-        <input class='btn-outline-success m-3' type="button" value="Select" (click)="tutorialSelected(tut)" />
+        <input class='btn btn-success m-3' type="button" value="Select" (click)="tutorialSelected(tut)" />
       </td>
     </tr>
   </table>
