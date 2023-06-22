@@ -1,0 +1,46 @@
+.nested-conatiner {
+    background: #1d2b64; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #f8cdda,
+      #1d2b64
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #f8cdda,
+      #1d2b64
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    padding: 20px;
+  }
+  .reactjs {
+    background: #f1f2b5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #135058,
+      #f1f2b5
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #135058,
+      #f1f2b5
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    color: white;
+  }
+  .reactnative {
+    background: #d1913c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #ffd194,
+      #d1913c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #ffd194,
+      #d1913c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    margin-left: 10px;
+    color: white;
+  }

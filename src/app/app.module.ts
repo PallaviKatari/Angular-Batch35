@@ -26,6 +26,18 @@ import { CustompipePipe } from './custompipe.pipe';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { PhoneNumberValidatorDirective } from './phone-number-validator.directive';
+import { CoursedetailComponent } from './coursedetail/coursedetail.component';
+import { CourselistComponent } from './courselist/courselist.component';
+import { CurrenttrainingComponent } from './currenttraining/currenttraining.component';
+import { UpcomingtrainingComponent } from './upcomingtraining/upcomingtraining.component';
+import { ReactComponent } from './currenttraining/react/react.component';
+import { AngularComponent } from './currenttraining/angular/angular.component';
+import { VueComponent } from './currenttraining/vue/vue.component';
+import { DotnetComponent } from './upcomingtraining/dotnet/dotnet.component';
+import { OpensourceComponent } from './upcomingtraining/opensource/opensource.component';
+import { ReactjsComponent } from './currenttraining/react/reactjs/reactjs.component';
+import { ReactnativeComponent } from './currenttraining/react/reactnative/reactnative.component';
+import { MyValidatorDirective } from './my-validator.directive';
 
 
 @NgModule({
@@ -41,7 +53,19 @@ import { PhoneNumberValidatorDirective } from './phone-number-validator.directiv
     CustompipePipe,
     SignupComponent,
     SigninComponent,
-    PhoneNumberValidatorDirective
+    PhoneNumberValidatorDirective,
+    CoursedetailComponent,
+    CourselistComponent,
+    CurrenttrainingComponent,
+    UpcomingtrainingComponent,
+    ReactComponent,
+    AngularComponent,
+    VueComponent,
+    DotnetComponent,
+    OpensourceComponent,
+    ReactjsComponent,
+    ReactnativeComponent,
+    MyValidatorDirective
   ],
   imports: [
     BrowserModule,

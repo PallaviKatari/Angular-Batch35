@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as data from 'src/assets/data/courses.json';
 //Custom Validator
 import { ValidateMail } from 'src/shared/url.validator';
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -18,7 +19,6 @@ export class CourseComponent implements OnInit {
   myForm: FormGroup;
   username: FormControl | any;
   mail: FormControl | any;
-  constructor() {}
 
   ngOnInit() {
     this.username = new FormControl('', [
@@ -29,10 +29,9 @@ export class CourseComponent implements OnInit {
     this.mail = new FormControl('', [Validators.required, ValidateMail]);
     this.myForm = new FormGroup({
       username: this.username,
-      mail:this.mail
+      mail: this.mail,
     });
   }
-
 
   course: any = (data as any).default;
   //Toggle effect to show and hide the customer details
