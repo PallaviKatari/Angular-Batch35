@@ -1,0 +1,14 @@
+<div class="container">
+  <p>SORT FILTER PIPE</p>
+ <b> SEARCH COURSE : </b>
+  <input type="text" [(ngModel)]="term" />
+
+  <ul>
+    <li *ngFor="let course of topics | filter : term | sortwithName : 'num'">
+      <div>
+        <!-- COURSE ID - COURSE NAME-->
+        <span>{{ course.id }} - {{ course.name }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

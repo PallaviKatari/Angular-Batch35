@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CareerComponent } from './career/career.component';
 import { CourseComponent } from './course/course.component';
 import { NavComponent } from './nav/nav.component';
-
+//Services
+import { HttpClientModule } from '@angular/common/http';
 //PrimeNG
 import { AccordionModule } from 'primeng/accordion';
 import { PanelModule } from 'primeng/panel';
@@ -22,10 +23,10 @@ import { SidebarModule } from 'primeng/sidebar';
 import { InfoComponent } from './info/info.component';
 import { TutoriallistComponent } from './tutoriallist/tutoriallist.component';
 import { TutorialtableComponent } from './tutorialtable/tutorialtable.component';
-import { CustompipePipe } from './custompipe.pipe';
+import { CustompipePipe } from 'src/shared/custompipe.pipe';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
-import { PhoneNumberValidatorDirective } from './phone-number-validator.directive';
+import { PhoneNumberValidatorDirective } from 'src/shared/phone-number-validator.directive';
 import { CoursedetailComponent } from './coursedetail/coursedetail.component';
 import { CourselistComponent } from './courselist/courselist.component';
 import { CurrenttrainingComponent } from './currenttraining/currenttraining.component';
@@ -37,8 +38,14 @@ import { DotnetComponent } from './upcomingtraining/dotnet/dotnet.component';
 import { OpensourceComponent } from './upcomingtraining/opensource/opensource.component';
 import { ReactjsComponent } from './currenttraining/react/reactjs/reactjs.component';
 import { ReactnativeComponent } from './currenttraining/react/reactnative/reactnative.component';
-import { MyValidatorDirective } from './my-validator.directive';
-
+import { FilterPipe } from 'src/shared/filter.pipe';
+import { FilterdemoComponent } from './filterdemo/filterdemo.component';
+import { SortPipe } from '../shared/sortfilter.pipe';
+import { Products } from 'src/Models/products';
+import { SingleProductComponent } from './products/single-product/single-product.component';
+import { ViewProductComponent } from './products/view-product/view-product.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductSortPipe } from 'src/shared/productsort.pipe';
 
 @NgModule({
   declarations: [
@@ -65,7 +72,13 @@ import { MyValidatorDirective } from './my-validator.directive';
     OpensourceComponent,
     ReactjsComponent,
     ReactnativeComponent,
-    MyValidatorDirective
+    FilterPipe,
+    FilterdemoComponent,
+    SortPipe,
+    ProductsComponent,
+    SingleProductComponent,
+    ViewProductComponent,
+    ProductSortPipe
   ],
   imports: [
     BrowserModule,
@@ -77,7 +90,8 @@ import { MyValidatorDirective } from './my-validator.directive';
     RadioButtonModule,
     BrowserAnimationsModule,
     SidebarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

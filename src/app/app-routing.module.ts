@@ -35,7 +35,9 @@ import { DotnetComponent } from './upcomingtraining/dotnet/dotnet.component';
 import { OpensourceComponent } from './upcomingtraining/opensource/opensource.component';
 import { ReactjsComponent } from './currenttraining/react/reactjs/reactjs.component';
 import { ReactnativeComponent } from './currenttraining/react/reactnative/reactnative.component';
-
+//PRODUCTS COMPONENT
+import { ViewProductComponent } from './products/view-product/view-product.component';
+import { ProductsComponent } from './products/products.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'career', component: CareerComponent },
@@ -45,6 +47,9 @@ const routes: Routes = [
   { path: 'tutorial', component: TutoriallistComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
+  //PRODUCTS COMPONENT
+  {path:'products',component:ProductsComponent},
+  {path:"viewProduct/:id",component:ViewProductComponent},
   //CHILD ROUTES/NESTED ROUTING
   {
     path: 'current',component:CurrenttrainingComponent, 
