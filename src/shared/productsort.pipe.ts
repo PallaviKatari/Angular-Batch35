@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ProductSortPipe implements PipeTransform {
   transform(value: Array<string>, args: any[]): any {
-    const sortField = args[0];
-    const sortDirection = args[1];
+    const sortField = args[0]; //price
+    const sortDirection = args[1]; //asc
     let multiplier = 1;
 
     if (sortDirection === 'desc') {

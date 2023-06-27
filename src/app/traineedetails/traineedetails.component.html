@@ -1,0 +1,14 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="margin-top: 10px">
+        <div class="col-md-3 col-xs-6" *ngFor="let trainee of trainees">
+            <div class="card" style="border-style:groove;border-color:black;margin-top: 50px" >
+                <div class="card-body" style="margin-top: 50px;margin-bottom: 30px;margin-left: 30px;">
+                    <img [src]="trainee.url" style="height: 100px;width: 100px;">
+                    <h5 class="card-title">{{ trainee.name | uppercase}}</h5>
+                    <p class="card-text">{{ trainee.designation |uppercase}}</p>
+                    <a class="btn btn-primary" style="text-align:center" href="{{trainee.url}}" >Read More....</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

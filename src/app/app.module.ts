@@ -41,11 +41,12 @@ import { ReactnativeComponent } from './currenttraining/react/reactnative/reactn
 import { FilterPipe } from 'src/shared/filter.pipe';
 import { FilterdemoComponent } from './filterdemo/filterdemo.component';
 import { SortPipe } from '../shared/sortfilter.pipe';
-import { Products } from 'src/Models/products';
 import { SingleProductComponent } from './products/single-product/single-product.component';
 import { ViewProductComponent } from './products/view-product/view-product.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductSortPipe } from 'src/shared/productsort.pipe';
+import { TraineedetailsComponent } from './traineedetails/traineedetails.component';
+import { CoursecartitemComponent } from './coursecartitem/coursecartitem.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,9 @@ import { ProductSortPipe } from 'src/shared/productsort.pipe';
     ProductsComponent,
     SingleProductComponent,
     ViewProductComponent,
-    ProductSortPipe
+    ProductSortPipe,
+    TraineedetailsComponent,
+    CoursecartitemComponent
   ],
   imports: [
     BrowserModule,

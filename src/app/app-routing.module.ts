@@ -38,6 +38,11 @@ import { ReactnativeComponent } from './currenttraining/react/reactnative/reactn
 //PRODUCTS COMPONENT
 import { ViewProductComponent } from './products/view-product/view-product.component';
 import { ProductsComponent } from './products/products.component';
+//Observable
+import { TraineedetailsComponent } from './traineedetails/traineedetails.component';
+//Addtocart
+import { CoursecartitemComponent } from './coursecartitem/coursecartitem.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'career', component: CareerComponent },
@@ -50,6 +55,10 @@ const routes: Routes = [
   //PRODUCTS COMPONENT
   {path:'products',component:ProductsComponent},
   {path:"viewProduct/:id",component:ViewProductComponent},
+  //OBSERVABLES
+  {path:'trainees',component:TraineedetailsComponent},
+  //Add to Cart
+  {path:'cartitem',component:CoursecartitemComponent},
   //CHILD ROUTES/NESTED ROUTING
   {
     path: 'current',component:CurrenttrainingComponent, 

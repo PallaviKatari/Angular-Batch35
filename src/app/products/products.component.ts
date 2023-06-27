@@ -14,17 +14,15 @@ export class ProductsComponent implements OnInit {
   //productsList:Products[] =[]; store the data from ProductsService -> getProducts()
   productsList: any[] = [];
 
-
-  optionSelected: any;
-
+  //Sort Pipe
   sortParam: any;
   sortDirection: any;
+  optionSelected: any;
 
+  //lth
   onOptionsSelected(event: any) {
     console.log(event.target.value); //option value will be sent as event
-
-    this.optionSelected = event.target.value;
-
+    this.optionSelected = event.target.value; //lth
     if (this.optionSelected === 'lth') {
       (this.sortParam = 'price'), (this.sortDirection = 'asc');
     } else if (this.optionSelected === 'htl') {

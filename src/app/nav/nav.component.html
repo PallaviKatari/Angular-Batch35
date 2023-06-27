@@ -39,6 +39,9 @@
             <li>
               <a class="dropdown-item" routerLink="products">Uniforms</a>
             </li>
+            <li>
+              <a class="dropdown-item" routerLink="trainees">Top Performers</a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
             <li>
               <!-- We use the queryParams property of the routerlink directive to add the query parameter.  -->
@@ -103,6 +106,9 @@
               >SIGN UP</a
             >
           </li>
+          <button routerLink='cartitem' style="height:5px;border:none;" >
+            <span class="fa fa-cart-plus" style="font-size:16px;color:black"><sup class="text-warning" style="font-size:10px;margin-left: 3px;;">{{cartCount}}</sup></span>
+          </button> &nbsp;&nbsp;&nbsp;
         </ul>
       </form>
     </div>
