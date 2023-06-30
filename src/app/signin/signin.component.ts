@@ -1,10 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-//Reactive Form Components
-import { FormGroup, FormControl } from '@angular/forms';
-//Validators Component
-import { Validators } from '@angular/forms';
-//Custom Validator
-//import { FormBuilder,AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { UserService } from 'src/Services/users.service';
+//npm install sweetalert2
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signin',
@@ -12,32 +13,79 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-  constructor() {}
-  answerTypes = ['Yes', 'No'];
-  myForm1: FormGroup;
-  username: FormControl | any;
-  password: FormControl | any;
-  answerType: FormControl | any;
-  age: FormControl | any;
-  ngOnInit() {
-    //this.invokeStripe();
-    this.username = new FormControl('', [
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(16)
-    ]);
-    this.password = new FormControl('', Validators.pattern('[a-zA-Z]*'));
-    this.answerType = new FormControl('', Validators.required);
-    this.age = new FormControl('', [Validators.required, Validators.min(18)]);
-    this.myForm1 = new FormGroup({
-      username: this.username,
-      password: this.password,
-      answerType: this.answerType,
-      age: this.age,
+  public loginForm!: FormGroup;
+  //Authenticate user details from userapi
+  userapi = environment.userapi;
+
+  submitted = false;
+  get f() {
+    return this.loginForm.controls;
+  }
+  //constructor injection
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private userService: UserService
+  ) {}
+
+  ngOnInit(): void {
+    this.userService.validateAuth(false); //data parameter in your userservice
+    this.loginForm = this.formBuilder.group({
+      useremail: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
+  login() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
+    this.http.get<any>(this.userapi).subscribe((res) => {
+      const user = res.find((a: any) => {
+        return (
+          a.useremail === this.loginForm.value.useremail &&
+          a.password === this.loginForm.value.password
+        );
+      });
+      if (user) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
 
-  onSubmit(form: any) {
-    console.log(form.value);
+        Toast.fire({
+          icon: 'success',
+          title: 'Login Successful',
+        });
+        this.loginForm.reset();
+        this.router.navigate(['']);
+        this.userService.validateAuth(true);
+      } else {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+
+        Toast.fire({
+          icon: 'error',
+          title: 'User not found',
+        });
+        this.userService.validateAuth(false);
+      }
+    });
   }
 }

@@ -1,103 +1,96 @@
-<h1>TEMPLATE-DRIVEN FORMS WITH VALIDATION</h1>
-<div class="container">
-  <form
-    #userForm="ngForm"
-    (ngSubmit)="userForm.form.valid && onSubmit(userForm)"
-    novalidate
-  >
-    <div class="form-group">
-      <label>Name</label>
-      <input
-        type="text"
-        name="name"
-        class="form-control"
-        [(ngModel)]="model.name"
-        #name="ngModel"
-        [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }"
-        required
-      />
-      <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
-        <p *ngIf="name.errors.required">Name is required</p>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Email</label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        [(ngModel)]="model.email"
-        #email="ngModel"
-        [ngClass]="{ 'is-invalid': userForm.submitted && email.invalid }"
-        email
-        required
-      />
-      <div *ngIf="userForm.submitted && email.invalid" class="invalid-feedback">
-        <div *ngIf="email.errors.required">Email is required</div>
-        <div *ngIf="email.errors.email">Must be a valid email address</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Password</label>
-      <input
-        type="password"
-        class="form-control"
-        name="password"
-        [(ngModel)]="model.password"
-        #password="ngModel"
-        [ngClass]="{ 'is-invalid': userForm.submitted && password.invalid }"
-        minlength="8"
-        required
-      />
-      <div
-        *ngIf="userForm.submitted && password.invalid"
-        class="invalid-feedback"
+<div class="mt-5">
+  <div class="col-md-12 min-vh-100 d-flex flex-column">
+    <div class="login-form">
+      <form
+        class="mt-5"
+        [formGroup]="registerForm"
+        (ngSubmit)="submitHandler()"
       >
-        <div *ngIf="password.errors.required">Password is required</div>
-        <div *ngIf="password.errors.minlength">
-          Password should be at least 8 characters long
+        <h2 class="text-center secondary ms-mb-m main-heading ng-binding">
+          Signup with CG-Vak
+        </h2>
+        <br />
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            formControlName="username"
+            placeholder="Enter Username"
+          />
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['username'].invalid"
+            >Name is required
+          </label>
         </div>
-      </div>
-    </div>
-
-    <!-- CUSTOM VALIDATOR FOR PHONE NUMBER -->
-    <div class="form-group">
-      <label>Phone Number</label>
-      <input
-        type="phoneNumber"
-        class="form-control"
-        name="phoneNumber"
-        [(ngModel)]="model.phoneNumber"
-        #phoneNumber="ngModel"
-        [ngClass]="{ 'is-invalid': userForm.submitted && phoneNumber.invalid }"
-        appPhoneNumberValidator 
-        required
-      />
-      <div
-        *ngIf="userForm.submitted && phoneNumber.invalid"
-        class="invalid-feedback"
-      >
-        <div *ngIf="phoneNumber.errors.required">Phone Number is required</div>
-        <div *ngIf="phoneNumber.errors.minlength">
-          Phone Number must match the pattern
+        <br />
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            name="useremail"
+            formControlName="useremail"
+            placeholder="Enter email"
+          />
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['useremail'].invalid"
+            >Email is required
+          </label>
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['useremail'].errors?.['useremail']"
+            >Email must be a valid email address</label
+          >
         </div>
-      </div>
+        <br />
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            formControlName="password"
+            placeholder="Enter password"
+          />
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['password'].errors?.['password']"
+            >Password is required</label
+          >
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['password'].errors?.['minlength']"
+            >Password must be at least 6 characters</label
+          >
+        </div>
+        <br />
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="mobile"
+            formControlName="mobile"
+            placeholder="Enter Mobile number"
+          />
+          <label
+            class="error ng-binding"
+            *ngIf="submitted && f['mobile'].errors?.['required']"
+            >Mobile number is required</label
+          >
+        </div>
+        <br />
+        <button type="submit" class="btn btn-warning">Register</button>
+        <div
+          class="text-center ms-mt-x ms-mb-m register-already-account"
+          style="padding-top: 30px"
+        >
+          <span class="ms-fs-12 ng-binding"
+            >Already have an account?
+            <a class="secondary ng-binding" href="signin"> Login! </a>
+          </span>
+        </div>
+      </form>
     </div>
-
-    <div class="form-group">
-      <label>Designation</label>
-      <select class="form-control" name="designation" [(ngModel)]="designation">
-        <option value="designation">Select an option</option>
-        <option *ngFor="let desig of designation" [value]="designation">
-          {{ desig }}
-        </option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-danger btn-block">Submit</button>
-    </div>
-  </form>
+  </div>
 </div>

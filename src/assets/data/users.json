@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "username": "pallavi",
+      "useremail": "pallavikatari@gmail.com",
+      "password": "123123",
+      "mobile": "09994083106",
+      "id": 1
+    },
+    {
+      "username": "Jancy",
+      "useremail": "jancy@gmail.com",
+      "password": "123123",
+      "mobile": "09994083106",
+      "id": 2
+    }
+  ]
+}

@@ -1,12 +1,164 @@
    <!-- PARAMETERIZED ROUTING -->
-   <p>Course ID: {{ id }}</p>
+   <!-- <p>Course ID: {{ id }}</p>
    <ul>
     <li><a [routerLink]="['/coursedetail', 1]">Course 1</a></li>
     <li><a [routerLink]="['/coursedetail', 2]">Course 2</a></li>
     <li><a [routerLink]="['/coursedetail', 3]">Course 3</a></li>
   </ul>
 
-  <li><a [routerLink]="['/course']">Back to course</a></li>
+  <li><a [routerLink]="['/course']">Back to course</a></li> -->
+  <!--Validators are rules which an input control has to follow. 
+    If the input doesn’t match the rule then the control is said to be invalid.
+Angular comes with the small set of prebuilt validators to match the ones we can 
+define via standard HTML 5 attributes, namely required, minlength, maxlength and 
+pattern which we can access from the Validators class in @angular/forms library.
+STEP 1:ng g c signin
+STEP 2:app.module.ts->import { ReactiveFormsModule } from '@angular/forms';
+STEP 3:signin.component.ts ->import { Validators } from '@angular/forms';-->
+<!---->
+<h1>REACTIVE FORMS/MODEL-DRIVEN FORMS</h1>
+<div class="form-group">
+  <!--Alert component of bootstrap-->
+  <div class="alert alert-info" role="alert">
+    <!--Valid is true if the field doesn’t have validators or all its validators are passing.-->
+    <strong>Valid ? </strong>{{ username.valid }} <br />
+    <strong>Invalid ? </strong>{{ username.invalid }}<br />
+    <!--A form control is said to be touched if a user focused on the control and then focused on something else.
+    The difference between touched and dirty is that with touched the user doesn’t need to actually change the value of the input control.-->
+    <strong>Touched ? </strong>{{ username.touched }}<br />
+    <strong>Untouched ? </strong>{{ username.untouched }}<br />
+    <!--Dirty property is true if a user changes the value of form control.-->
+    <strong>Dirty ? </strong>{{ username.dirty }}<br />
+    <!--Pristine property is true if a user doesn’t change the value of form control, otherwise, it is false.-->
+    <strong>Pristine ? </strong>{{ username.pristine }}<br />
+  </div>
+</div>
+<!--Bootstrap provides a different way to show an error message to the user.
+
+By using Alert component of bootstrap
+By using visual feedback for the form controls when they are invalid.-->
+<!--Validation-->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">SIGN IN (Model Driven Form)</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="myForm1" novalidate>
+          <div class="form-group">
+            <label>USERNAME</label>
+            <!--is-invalid class makes control border color red, as well as it will show the invalid-feedback division.
+                is-valid class makes control border color green.-->
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your username"
+              formControlName="username"
+              [ngClass]="{
+                'is-invalid':
+                  username.errors && (username.touched || username.dirty),
+                'is-valid': username.valid
+              }"
+            />
+            <!--using visual feedback-->
+            <div class="invalid-feedback">
+              <!--*ngIf Directive-->
+              <strong *ngIf="username.errors?.required"
+                >Username is required</strong
+              >
+              <strong *ngIf="username.errors?.minlength"
+                >Username length must be greater than
+                {{ username.errors?.minlength.requiredLength }} characters.
+                {{
+                  username.errors?.minlength.requiredLength -
+                    username.errors?.minlength.actualLength
+                }}
+                more characters required.
+              </strong>
+              <strong *ngIf="username.errors?.maxlength"
+                >Username length must be less than 17 characters
+              </strong>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>PASSWORD</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              [ngClass]="{
+                'is-invalid':
+                  password.errors && (password.touched || password.dirty)
+              }"
+            />
+            <div class="invalid-feedback">
+              <strong>Only Alphabets are allowed. </strong>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Are you a Robot?</label>
+            <select
+              class="form-control"
+              formControlName="answerType"
+              [ngClass]="{
+                'is-invalid':
+                  answerType.errors && (answerType.touched || answerType.dirty),
+                'is-valid': answerType.valid
+              }"
+            >
+              <option *ngFor="let a of answerTypes" [value]="a">
+                {{ a }}
+              </option>
+            </select>
+            <div class="invalid-feedback">
+              <strong>Select Response Type.</strong>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="age"
+              [ngClass]="{
+                'is-invalid': age.errors && (age.touched || age.dirty),
+                'is-valid': age.valid
+              }"
+            />
+            <!-- <div class="invalid-feedback"> -->
+            <div class="alert alert-danger">
+              <strong *ngIf="age.errors?.required"> Age is required</strong>
+              <strong *ngIf="age.errors?.min">
+                Age should be greated than 18.</strong
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-danger btn-block"
+              (click)="onSubmit(myForm1)"
+            >
+              Submit
+            </button>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary" (click)="makePayment()">
+            Submit
+          </button>
+          <button class="btn btn-default">
+            <a href="https://buy.stripe.com/test_6oE5mm0g0eu34kodQS">BUY</a>
+          </button> -->
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <label>
+          <strong>myForm1 : JSON</strong>
+        </label>
+        <pre class="alert alert-info">{{ myForm1.value|json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   
 
