@@ -23,14 +23,6 @@
       "fees": 10000,
       "img": "https://th.bing.com/th/id/OIP._w4kEUAb7-YMEOc46aFcWQHaHD?w=171&h=180&c=7&r=0&o=5&dpr=1.56&pid=1.7",
       "quantity": 1
-    },
-    {
-      "id": 3,
-      "name": "PHP",
-      "description": "PHP WITH LARAVEL",
-      "fees": 10000,
-      "img": "https://1.bp.blogspot.com/-gxoMTZdNRdI/UcekDGVFqSI/AAAAAAAAAOw/YCWxwoY27C4/s1600/php-programming-language.jpg",
-      "quantity": 1
     }
   ],
   "Products": [
