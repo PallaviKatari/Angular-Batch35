@@ -4,7 +4,8 @@
 
 export const environment = {
   production: true,
-  userapi:"http://localhost:3000/users",
+  userapi:"https://json-server-6w8g34cwc-pallavikatari.vercel.app/users"
+  //userapi:"http://localhost:3000/users",
 };
 
 /*
