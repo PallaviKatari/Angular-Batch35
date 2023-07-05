@@ -42,8 +42,12 @@ import { ProductsComponent } from './products/products.component';
 import { TraineedetailsComponent } from './traineedetails/traineedetails.component';
 //Addtocart
 import { CoursecartitemComponent } from './coursecartitem/coursecartitem.component';
+//Lazy Loading
 
 const routes: Routes = [
+  //Lazy Loading ( first 2 )
+  { path: 'a', loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule) },
+  { path: 'b', loadChildren: () => import('./moduleb/moduleb.module').then(m => m.ModulebModule) },
   { path: '', component: HomeComponent },
   { path: 'career', component: CareerComponent },
   { path: 'course', component: CourseComponent },
@@ -79,7 +83,9 @@ const routes: Routes = [
       {path: 'dotnet', component: DotnetComponent},
       {path: 'open', component: OpensourceComponent}
     ]  
-  }
+  },
+  { path: 'a', loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule) },
+  { path: 'b', loadChildren: () => import('./moduleb/moduleb.module').then(m => m.ModulebModule) }
 ];
 
 @NgModule({

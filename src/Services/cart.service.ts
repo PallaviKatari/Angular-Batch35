@@ -11,7 +11,7 @@ import { Cartitem } from 'src/Models/cartitem';
 export class CartService {
 
   url: string = '';
-  carturl = 'http://localhost:3000/Cart';
+  carturl = 'https://json-server-6w8g34cwc-pallavikatari.vercel.app/Cart';
 
   constructor(private http: HttpClient) {
     this.url = this.carturl + '/';

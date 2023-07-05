@@ -1,35 +1,59 @@
+<!-- LAZY LOADING -->
+<p>
+  What is Lazy Loading?<br />
+  Lazy loading is the process of loading components, modules, or other assets of
+  a website as they're required. Since Angular creates a SPA (Single Page
+  Application), all of its components are loaded at once. This means that a lot
+  of unnecessary libraries or modules might be loaded as well. For a small
+  application this would be okay. But as the application grows the load time
+  will increase if everything is loaded at once. Lazy loading allows Angular to
+  load components and modules as and when they're needed.
+</p>
+<button
+  style="padding: 20px; color: white; background-color: green"
+  routerLink="a"
+>
+  Load Module A
+</button>
+<button
+  style="padding: 20px; color: white; background-color: blue"
+  routerLink="b"
+>
+  Load Module B
+</button>
+<hr/>
 <!-- <h1 class="yellow">Welcome to Home Component - DATA BINDING</h1> -->
 <!-- String Interpolation -->
 <div class="container">
   <div class="row">
     <div class="col col-lg-6 colstyle">
       <p>STRING INTERPOLATION</p>
-      <hr/>
+      <hr />
       <p>Hi!!!{{ name }}... Welcome Back!!! {{ count }}</p>
       <p>{{ name }} is a {{ getDetails() }}</p>
       <p>{{ 10 + 10 }}</p>
       <p>Largest number:{{ getLarge(100, 1000) }}</p>
       <!-- Property Binding -->
-      <hr/>
+      <hr />
       <p>Property Binding</p>
-      <hr/>
+      <hr />
       <h4 [innerText]="title"></h4>
       <button [disabled]="isDisabled">I am Disabled</button>
-      <hr/>
+      <hr />
       <!-- Property Binding - Content Security -->
       <p>Property Binding - Content Security</p>
-      <hr/>
+      <hr />
       <p [textContent]="injectText"></p>
       <img [src]="imgUrl" height="100px" width="100px" />
-      <br/>
-      <br/>
+      <br />
+      <br />
       <img bind-src="imgUrl" height="100px" width="100px" />
       <p [style.color]="color">Property Binding - Style Attribute</p>
     </div>
     <div class="col col-lg-6 colstyle">
       <!-- Event Binding -->
       <p>Event Binding</p>
-      <hr/>
+      <hr />
       <h5>Event Binding {{ count }}</h5>
       <p>Single method invoked</p>
       <button (click)="click()">Click me!!!</button>
@@ -41,21 +65,21 @@
       <p>Count value : {{ count }}</p>
       <p>Count 1 value : {{ count1 }}</p>
       <!-- $event payload -->
-      <hr/>
+      <hr />
       <p>$event payload</p>
-      <hr/>
+      <hr />
       <input (input)="getValue($event)" />
       <p>Event Payload:{{ value }}</p>
       <!-- Template reference variable -->
-      <hr/>
+      <hr />
       <p>Template reference variable</p>
-      <hr/>
+      <hr />
       <input #val (input)="getValue1(val)" />
       <p>Template Reference:{{ value1 }}</p>
       <!-- Key event filtering -->
-      <hr/>
+      <hr />
       <p>Key event filtering</p>
-      <hr/>
+      <hr />
       <input (keyup)="value2 = $any($event.target).value" />
       <p>Keyup:{{ value2 }}</p>
       <input (keyup.enter)="value3 = $any($event.target).value" />
@@ -73,16 +97,16 @@
     <div class="col col-lg-6 colstyle">
       <!-- Two-way Binding -->
       <p>Two-way Binding</p>
-      <hr/>
+      <hr />
       <input type="text" name="value" [(ngModel)]="value6" />
       <p>Two-way Binding:{{ value6 }}</p>
       <button (click)="clear()">Clear Value6</button>
-      <hr/>
+      <hr />
       <p>DIRECTIVES</p>
-      <hr/>
+      <hr />
       <!-- *ngFor -->
       <p>*ngFor</p>
-      <hr/>
+      <hr />
       <h3>Trainees Details*ngFor Example</h3>
       <ul>
         <li *ngFor="let trainee of trainees">
@@ -91,9 +115,9 @@
         </li>
       </ul>
       <!-- ngSwitch - *ngSwitchCase , *ngSwitchDefault -->
-      <hr/>
+      <hr />
       <p>ngSwitch - *ngSwitchCase , *ngSwitchDefault</p>
-      <hr/>
+      <hr />
       <div class="card">
         <div class="card-header">ngSwitch Example</div>
         <div class="card-body">
@@ -113,7 +137,7 @@
     <div class="col col-lg-6 colstyle">
       <!-- Pipes -->
       <p>PIPES</p>
-      <hr/>
+      <hr />
       DATE PIPES <br />
       DEFAULT: {{ toDate }}
       <br />

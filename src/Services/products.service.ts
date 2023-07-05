@@ -11,7 +11,7 @@ export class ProductsService {
   //inject the HttpClient
   constructor(private http: HttpClient) {}
 
-  url: string = 'http://localhost:3000/Products';
+  url: string = 'https://json-server-6w8g34cwc-pallavikatari.vercel.app/Products';
 
   getProducts() {
     return this.http.get<Products[]>(this.url);
